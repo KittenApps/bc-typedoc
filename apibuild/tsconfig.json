@@ -1,0 +1,8 @@
+{
+  "include": ["../node_modules/bc-stubs/bc/**/*.ts"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["es2021", "dom"],
+    "downlevelIteration": true
+  }
+}

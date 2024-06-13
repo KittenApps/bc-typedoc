@@ -1,0 +1,49 @@
+diff --git a/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js b/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
+index 9de02ac..3909c5a 100644
+--- a/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
++++ b/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
+@@ -1,21 +1,13 @@
+ 'use strict';
+ 
+-const useDocusaurusContext = require('@docusaurus/useDocusaurusContext');
+ const useGitRefName = require('../hooks/useGitRefName.js');
+ const jsxRuntime = require('react/jsx-runtime');
+-const _interopDefault = e => e && e.__esModule ? e : {
+-  default: e
+-};
+-const useDocusaurusContext__default = /*#__PURE__*/_interopDefault(useDocusaurusContext);
+ function replaceWithSrc(url) {
+-  // Always link the source file
+-  return url.replace(/\/(dts|dist|lib|build|es|esm|cjs|mjs)\//, '/src/');
++  return url.replace('bc-stubs/bc', 'bc');
+ }
+ function SourceLink({
+   sources = []
+ }) {
+-  const _useDocusaurusContext = useDocusaurusContext__default.default(),
+-    siteConfig = _useDocusaurusContext.siteConfig;
+   const gitRefName = useGitRefName.useGitRefName();
+   if (sources.length === 0) {
+     return null;
+@@ -23,7 +15,7 @@ function SourceLink({
+   return /*#__PURE__*/jsxRuntime.jsx(jsxRuntime.Fragment, {
+     children: sources.map(source => /*#__PURE__*/jsxRuntime.jsx("a", {
+       className: "tsd-anchor",
+-      href: source.url || `https://${siteConfig.githubHost}${siteConfig.githubPort ? `:${siteConfig.githubPort}` : ''}/${siteConfig.organizationName}/${siteConfig.projectName}/blob/${gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`,
++      href: source.url || `https://github.com/bananarama92/BC-stubs/blob/${gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`,
+       rel: "noreferrer",
+       target: "_blank",
+       children: /*#__PURE__*/jsxRuntime.jsx("i", {
+diff --git a/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js b/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js
+index 56ddf05..bd32d7b 100644
+--- a/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js
++++ b/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js
+@@ -76,7 +76,7 @@ async function generateJson(projectRoot, entryPoints, outFile, options) {
+     skipErrorChecking: true,
+     // stripYamlFrontmatter: true,
+     // Only emit when using project references
+-    emit: shouldEmit(projectRoot, tsconfig),
++    emit: 'none',
+     // Only document the public API by default
+     excludeExternals: true,
+     excludeInternal: true,
