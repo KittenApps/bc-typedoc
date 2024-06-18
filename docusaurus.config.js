@@ -11,7 +11,7 @@ const pkgJson = JSON.parse(readFileSync('./package.json', { encoding: 'utf8' }))
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BC API Docs',
-  tagline: 'typedocs for BC generated from bc-stubs',
+  tagline: 'typedocs for BC generated from bc-stubs ' + pkgJson.dependencies["bc-stubs"].replace('^', 'v'),
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
