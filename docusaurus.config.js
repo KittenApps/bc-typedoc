@@ -58,6 +58,17 @@ const config = {
       },
     ],
   ],
+  themes: [[
+    "@easyops-cn/docusaurus-search-local",
+    {
+      hashed: true,
+      language: ["en"],
+      indexPages: true,
+      indexBlog: false,
+      highlightSearchTermsOnTargetPage: true,
+      explicitSearchResultPath: true,
+    },
+  ]],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -66,6 +77,7 @@ const config = {
         title: 'BC API Docs',
         items: [
           { to: '/api', label: 'BC API', position: 'left' },
+          { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'BC data' },
           {
             href: 'https://github.com/bananarama92/BC-stubs',
             label: 'GitHub',
