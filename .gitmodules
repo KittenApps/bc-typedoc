@@ -1,0 +1,5 @@
+[submodule "BondageCollege"]
+	path = BondageCollege
+	url = https://gitgud.io/bananarama92/Bondage-College.git
+	branch = typtyptyp
+	shallow = true

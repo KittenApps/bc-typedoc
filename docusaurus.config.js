@@ -6,12 +6,13 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 import { readFileSync } from 'fs';
+const { execSync } = require('node:child_process');
 const pkgJson = JSON.parse(readFileSync('./package.json', { encoding: 'utf8' }));
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BC API Docs',
-  tagline: 'typedocs for BC generated from bc-stubs ' + pkgJson.dependencies["bc-stubs"].replace('^', 'v'),
+  tagline: 'typedocs for BC ' + pkgJson.dependencies["bc-data"].replace('^', 'v'),
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -51,10 +52,11 @@ const config = {
     [
       'docusaurus-plugin-typedoc-api',
       {
-        gitRefName: pkgJson.dependencies["bc-stubs"].replace('^', 'v'),
-        typedocOptions: { excludeExternals: false, emit: 'none' },
-        projectRoot: './apibuild/',
-        packages: [{ path: '../node_modules/bc-stubs/', entry: 'bc/' }],
+        gitRefName: execSync('git rev-parse --short HEAD', { encoding: 'utf8', cwd: 'BondageCollege' }).split('\n')[0],
+        projectRoot: './BondageCollege/BondageClub/',
+        packages: [
+          { path: '.', entry: './' },
+        ],
       },
     ],
   ],

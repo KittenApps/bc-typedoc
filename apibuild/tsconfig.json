@@ -1,6 +1,13 @@
 {
-  "include": ["../node_modules/bc-stubs/bc/**/*.ts"],
+  "include": ["Assets", "Audio", "Backgrounds", "Icons", "Screens", "Scripts"],
+  "exclude": [
+    "Screens/MiniGame/KinkyDungeon",
+    "Scripts/MessagesPatch.d.ts"
+  ],
   "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "lib": ["es2021", "dom"],
     "downlevelIteration": true

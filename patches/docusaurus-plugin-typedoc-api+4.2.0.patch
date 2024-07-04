@@ -1,5 +1,29 @@
+diff --git a/node_modules/docusaurus-plugin-typedoc-api/lib/components/Reflection.js b/node_modules/docusaurus-plugin-typedoc-api/lib/components/Reflection.js
+index 5b55140..a356497 100644
+--- a/node_modules/docusaurus-plugin-typedoc-api/lib/components/Reflection.js
++++ b/node_modules/docusaurus-plugin-typedoc-api/lib/components/Reflection.js
+@@ -11,6 +11,7 @@ const Members = require('./Members.js');
+ const MemberSignatures = require('./MemberSignatures.js');
+ const Parameter = require('./Parameter.js');
+ const Type = require('./Type.js');
++const SourceLink = require('./SourceLink.js');
+ const TypeParameters = require('./TypeParameters.js');
+ const jsxRuntime = require('react/jsx-runtime');
+ 
+@@ -87,7 +88,10 @@ function Reflection({
+       className: "tsd-panel",
+       children: [/*#__PURE__*/jsxRuntime.jsx("h3", {
+         className: "tsd-panel-header tsd-before-signature",
+-        children: "Callable"
++        children: [
++          "Callable",
++          /*#__PURE__*/jsxRuntime.jsx(SourceLink.SourceLink, { sources: reflection.sources })
++        ]
+       }), /*#__PURE__*/jsxRuntime.jsx("div", {
+         className: "tsd-panel-content",
+         children: /*#__PURE__*/jsxRuntime.jsx(MemberSignatures.MemberSignatures, {
 diff --git a/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js b/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
-index 9de02ac..3909c5a 100644
+index 9de02ac..96491ef 100644
 --- a/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
 +++ b/node_modules/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
 @@ -1,21 +1,13 @@
@@ -30,7 +54,7 @@ index 9de02ac..3909c5a 100644
      children: sources.map(source => /*#__PURE__*/jsxRuntime.jsx("a", {
        className: "tsd-anchor",
 -      href: source.url || `https://${siteConfig.githubHost}${siteConfig.githubPort ? `:${siteConfig.githubPort}` : ''}/${siteConfig.organizationName}/${siteConfig.projectName}/blob/${gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`,
-+      href: source.url || `https://github.com/bananarama92/BC-stubs/blob/${gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`,
++      href: source.url || `https://gitgud.io/bananarama92/Bondage-College/-/blob/${gitRefName}/BondageClub/${replaceWithSrc(source.fileName)}#L${source.line}`,
        rel: "noreferrer",
        target: "_blank",
        children: /*#__PURE__*/jsxRuntime.jsx("i", {
