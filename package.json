@@ -20,7 +20,7 @@
     "@docusaurus/preset-classic": "^3.5.2",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.1",
-    "bc-data": "^106.0.0",
+    "bc-data": "^107.0.0",
     "clsx": "^2.1.1",
     "docusaurus-plugin-typedoc-api": "^4.2.1",
     "patch-package": "^8.0.0",
