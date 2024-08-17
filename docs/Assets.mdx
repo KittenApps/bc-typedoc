@@ -8,20 +8,20 @@ sidebar_position: 1
 import { assetVersion, assetID } from 'bc-data';
 
 {Object.keys(assetVersion).filter(k => k !== 'default').map(key => (
-  <>
+  <div key={key}>
     <h2>
       {key}
       <span className="badge badge--secondary margin-left--sm">ID: {assetID[key].id}</span>
     </h2>
     <ul>
       {Object.entries(assetVersion[key]).map(([k, v]) => (
-        <li>
+        <li key={k}>
           <b>{k}</b>
           <span className="badge badge--secondary margin-left--xs">ID: {JSON.stringify(assetID[key].assets[k])}</span>
           : added in {v}
         </li>
       ))}
     </ul>
-  </>
+  </div>
   )
 )}
