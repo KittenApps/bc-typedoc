@@ -1,0 +1,23 @@
+name: Repo
+on: 
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'ref'
+        required: true
+        type: 'string'
+      version:
+        description: 'version'
+        required: true
+        default: 'r1'
+        type: 'string'
+
+jobs:
+  Repo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git clone -b typtyptyp https://gitgud.io/bananarama92/Bondage-College.git .
+      - run: git checkout  ${{ inputs.ref }}
+      - run: git checkout -b ${{ inputs.version }}
+      - run: git remote add fork https://silizia:${{ secrets.GITGUD }}@gitgud.io/silizia/Bondage-College.git
+      - run: git push fork ${{ inputs.version }}

@@ -59,7 +59,7 @@ index 9de02ac..96491ef 100644
        target: "_blank",
        children: /*#__PURE__*/jsxRuntime.jsx("i", {
 diff --git a/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js b/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js
-index 3292db0..4614f80 100644
+index d2dc843..64fe333 100644
 --- a/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js
 +++ b/node_modules/docusaurus-plugin-typedoc-api/lib/plugin/data.js
 @@ -76,7 +76,7 @@ async function generateJson(projectRoot, entryPoints, outFile, options) {
