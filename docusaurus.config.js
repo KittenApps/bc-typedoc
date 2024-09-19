@@ -6,7 +6,6 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 import { readFileSync } from 'fs';
-const { execSync } = require('node:child_process');
 const pkgJson = JSON.parse(readFileSync('./package.json', { encoding: 'utf8' }));
 
 /** @type {import('@docusaurus/types').Config} */
@@ -52,7 +51,7 @@ const config = {
     [
       'docusaurus-plugin-typedoc-api',
       {
-        gitRefName: execSync('git rev-parse --short HEAD', { encoding: 'utf8', cwd: 'BondageCollege' }).split('\n')[0],
+        gitRefName: pkgJson.dependencies["bc-data"].split('.')[0].replace('^', 'r'),
         projectRoot: './BondageCollege/BondageClub/',
         packages: [
           { path: '.', entry: './' },

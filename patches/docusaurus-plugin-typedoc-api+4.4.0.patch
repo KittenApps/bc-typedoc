@@ -54,7 +54,7 @@ index 9de02ac..96491ef 100644
      children: sources.map(source => /*#__PURE__*/jsxRuntime.jsx("a", {
        className: "tsd-anchor",
 -      href: source.url || `https://${siteConfig.githubHost}${siteConfig.githubPort ? `:${siteConfig.githubPort}` : ''}/${siteConfig.organizationName}/${siteConfig.projectName}/blob/${gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`,
-+      href: source.url || `https://gitgud.io/bananarama92/Bondage-College/-/blob/${gitRefName}/BondageClub/${replaceWithSrc(source.fileName)}#L${source.line}`,
++      href: source.url || `https://gitgud.io/silizia/Bondage-College/-/blob/${gitRefName}/BondageClub/${replaceWithSrc(source.fileName)}#L${source.line}`,
        rel: "noreferrer",
        target: "_blank",
        children: /*#__PURE__*/jsxRuntime.jsx("i", {
