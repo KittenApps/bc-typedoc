@@ -83,11 +83,6 @@ const config = {
         items: [
           { to: '/api', label: 'BC API', position: 'left' },
           { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'BC data' },
-          {
-            href: 'https://github.com/bananarama92/BC-stubs',
-            label: 'GitHub',
-            position: 'right',
-          },
         ],
       },
       prism: {
