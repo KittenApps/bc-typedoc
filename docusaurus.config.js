@@ -6,12 +6,14 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 import { readFileSync } from 'fs';
-const pkgJson = JSON.parse(readFileSync('./package.json', { encoding: 'utf8' }));
+
+/** @type {string} */
+const VERSION = JSON.parse(readFileSync('./package.json', { encoding: 'utf8' })).dependencies["bc-data"].split('.')[0].replace('^', 'r');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'BC API Docs',
-  tagline: 'typedocs for BC ' + pkgJson.dependencies["bc-data"].replace('^', 'v'),
+  tagline: 'typedocs for BC ' + VERSION,
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -55,7 +57,7 @@ const config = {
     [
       'docusaurus-plugin-typedoc-api',
       {
-        gitRefName: pkgJson.dependencies["bc-data"].split('.')[0].replace('^', 'r'),
+        gitRefName: VERSION,
         projectRoot: './BondageCollege/BondageClub/',
         packages: [
           { path: '.', entry: './' },

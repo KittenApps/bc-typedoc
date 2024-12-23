@@ -1,5 +1,5 @@
 [submodule "BondageCollege"]
 	path = BondageCollege
 	url = https://gitgud.io/silizia/Bondage-College.git
-	branch = r110
+	branch = r111
 	shallow = true
