@@ -35,6 +35,7 @@ const config = {
 
   future: {
     experimental_faster: true,
+    v4: true,
   },
 
   presets: [
@@ -59,11 +60,17 @@ const config = {
       {
         gitRefName: VERSION,
         projectRoot: './BondageCollege/BondageClub/',
-        packages: [
-          { path: '.', entry: './' },
-        ],
+        packages: [ { path: '.', entry: './' } ],
       },
     ],
+    function disableExpensiveBundlerOptimizationPlugin() {
+      return {
+        name: "disable-expensive-bundler-optimizations",
+        configureWebpack(_config) {
+          return { optimization: { concatenateModules: false } };
+        },
+      };
+    },
   ],
   themes: [[
     "@easyops-cn/docusaurus-search-local",
