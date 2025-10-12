@@ -20,4 +20,4 @@ jobs:
       - run: git checkout  ${{ inputs.ref }}
       - run: git checkout -b ${{ inputs.version }}
       - run: git remote add fork https://silizia:${{ secrets.GITGUD }}@gitgud.io/silizia/Bondage-College.git
-      - run: git push fork ${{ inputs.version }}
+      - run: git push --progress fork ${{ inputs.version }}
