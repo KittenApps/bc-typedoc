@@ -15,24 +15,24 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.9.2",
-    "@docusaurus/faster": "^3.9.2",
-    "@docusaurus/plugin-vercel-analytics": "^3.9.2",
-    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/core": "^3.10.0",
+    "@docusaurus/faster": "^3.10.0",
+    "@docusaurus/plugin-vercel-analytics": "^3.10.0",
+    "@docusaurus/preset-classic": "^3.10.0",
     "@easyops-cn/docusaurus-search-local": "0.52.3",
     "@mdx-js/react": "^3.1.1",
-    "bc-data": "^126.0.0",
+    "bc-data": "^127.0.0",
     "clsx": "^2.1.1",
     "custompatch": "^1.1.8",
     "docusaurus-plugin-typedoc-api": "^4.4.0",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "socket.io-client": "4.8.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.2",
-    "@docusaurus/types": "^3.9.2"
+    "@docusaurus/module-type-aliases": "^3.10.0",
+    "@docusaurus/types": "^3.10.0"
   },
   "browserslist": {
     "production": [
