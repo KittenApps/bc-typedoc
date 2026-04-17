@@ -60,6 +60,7 @@ const config = {
       {
         gitRefName: VERSION,
         projectRoot: './BondageCollege/BondageClub/',
+        tsconfigName: '../../apibuild/tsconfig.json',
         packages: [ { path: '.', entry: './' } ],
       },
     ],
