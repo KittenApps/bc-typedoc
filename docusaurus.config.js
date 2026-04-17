@@ -56,7 +56,7 @@ const config = {
   plugins: [
     'vercel-analytics',
     [
-      'docusaurus-plugin-typedoc-api',
+      '@apify/docusaurus-plugin-typedoc-api',
       {
         gitRefName: VERSION,
         projectRoot: './BondageCollege/BondageClub/',

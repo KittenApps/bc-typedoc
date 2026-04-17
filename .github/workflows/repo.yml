@@ -16,7 +16,7 @@ jobs:
   Repo:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone -b typtyptyp https://gitgud.io/bananarama92/Bondage-College.git .
+      - run: git clone --progress -b typtyptyp https://gitgud.io/bananarama92/Bondage-College.git .
       - run: git checkout  ${{ inputs.ref }}
       - run: git checkout -b ${{ inputs.version }}
       - run: git remote add fork https://silizia:${{ secrets.GITGUD }}@gitgud.io/silizia/Bondage-College.git

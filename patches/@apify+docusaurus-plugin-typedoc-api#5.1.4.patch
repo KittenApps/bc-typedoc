@@ -1,0 +1,77 @@
+Index: /@apify/docusaurus-plugin-typedoc-api/lib/components/Reflection.js
+===================================================================
+--- /@apify/docusaurus-plugin-typedoc-api/lib/components/Reflection.js
++++ /@apify/docusaurus-plugin-typedoc-api/lib/components/Reflection.js
+@@ -11,8 +11,9 @@
+ import { MemberSignatures } from './MemberSignatures';
+ import { Parameter } from './Parameter';
+ import { extractDeclarationFromType, Type } from './Type';
+ import { TypeParameters } from './TypeParameters';
++import { SourceLink } from './SourceLink';
+ export function Reflection({ reflection }) {
+     var _a;
+     const hierarchy = useMemo(() => createHierarchy(reflection), [reflection]);
+     return (_jsxs(_Fragment, { children: [isCommentWithModifiers(reflection.comment) && _jsx(CommentBadges, { comment: reflection.comment }), hasComment(reflection.comment) && _jsx(Comment, { root: true, comment: reflection.comment }), 'typeParameter' in reflection &&
+@@ -25,7 +26,7 @@
+                     reflection.extendedTypes.length > 0)) && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header", children: "Hierarchy" }), _jsx("div", { className: "tsd-panel-content", children: _jsx(Hierarchy, { tree: hierarchy }) })] })), 'implementedTypes' in reflection &&
+                 reflection.implementedTypes &&
+                 reflection.implementedTypes.length > 0 && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header", children: "Implements" }), _jsx("div", { className: "tsd-panel-content", children: _jsx("ul", { className: "tsd-hierarchy", children: reflection.implementedTypes.map((type, i) => (_jsx("li", { children: _jsx(Type, { type: type }) }, type.type + String(i)))) }) })] })), 'implementedBy' in reflection &&
+                 reflection.implementedBy &&
+-                reflection.implementedBy.length > 0 && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header", children: "Implemented by" }), _jsx("div", { className: "tsd-panel-content", children: _jsx("ul", { className: "tsd-hierarchy", children: reflection.implementedBy.map((type, i) => (_jsx("li", { children: _jsx(Type, { type: type }) }, type.name + String(i)))) }) })] })), 'signatures' in reflection && reflection.signatures && reflection.signatures.length > 0 && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header tsd-before-signature", children: "Callable" }), _jsx("div", { className: "tsd-panel-content", children: _jsx(MemberSignatures, { sigs: reflection.signatures }) })] })), 'indexSignature' in reflection && reflection.indexSignature && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header tsd-before-signature", children: "Indexable" }), _jsxs("div", { className: "tsd-panel-content", children: [_jsxs("div", { className: "tsd-signature tsd-kind-icon", children: [_jsx(Icon, { reflection: reflection.indexSignature }), _jsx("span", { className: "tsd-signature-symbol", children: "[" }), (_a = reflection.indexSignature.parameters) === null || _a === void 0 ? void 0 : _a.map((param) => (_jsxs("span", { children: [param.name, ': ', _jsx(Type, { type: param.type })] }, param.id))), _jsx("span", { className: "tsd-signature-symbol", children: "]: " }), _jsx(Type, { type: reflection.indexSignature.type })] }), _jsx(Comment, { comment: reflection.indexSignature.comment }), _jsx(Parameter, { param: extractDeclarationFromType(reflection.indexSignature.type) })] })] })), _jsx(Index, { reflection: reflection }), _jsx(Members, { reflection: reflection })] }));
++                reflection.implementedBy.length > 0 && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header", children: "Implemented by" }), _jsx("div", { className: "tsd-panel-content", children: _jsx("ul", { className: "tsd-hierarchy", children: reflection.implementedBy.map((type, i) => (_jsx("li", { children: _jsx(Type, { type: type }) }, type.name + String(i)))) }) })] })), 'signatures' in reflection && reflection.signatures && reflection.signatures.length > 0 && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header tsd-before-signature", children: [ "Callable", _jsx(SourceLink, { sources: reflection.sources }) ] }), _jsx("div", { className: "tsd-panel-content", children: _jsx(MemberSignatures, { sigs: reflection.signatures }) })] })), 'indexSignature' in reflection && reflection.indexSignature && (_jsxs("section", { className: "tsd-panel", children: [_jsx("h3", { className: "tsd-panel-header tsd-before-signature", children: "Indexable" }), _jsxs("div", { className: "tsd-panel-content", children: [_jsxs("div", { className: "tsd-signature tsd-kind-icon", children: [_jsx(Icon, { reflection: reflection.indexSignature }), _jsx("span", { className: "tsd-signature-symbol", children: "[" }), (_a = reflection.indexSignature.parameters) === null || _a === void 0 ? void 0 : _a.map((param) => (_jsxs("span", { children: [param.name, ': ', _jsx(Type, { type: param.type })] }, param.id))), _jsx("span", { className: "tsd-signature-symbol", children: "]: " }), _jsx(Type, { type: reflection.indexSignature.type })] }), _jsx(Comment, { comment: reflection.indexSignature.comment }), _jsx(Parameter, { param: extractDeclarationFromType(reflection.indexSignature.type) })] })] })), _jsx(Index, { reflection: reflection }), _jsx(Members, { reflection: reflection })] }));
+ }
+ //# sourceMappingURL=Reflection.js.map
+\ No newline at end of file
+Index: /@apify/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
+===================================================================
+--- /@apify/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
++++ /@apify/docusaurus-plugin-typedoc-api/lib/components/SourceLink.js
+@@ -1,29 +1,23 @@
+ import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
+-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+ import { useGitRefName } from '../hooks/useGitRefName';
+ function replaceWithSrc(url) {
+     // Always link the source file
+-    return url.replace(/\/(dts|dist|lib|build|es|esm|cjs|mjs)\//, '/src/');
++    return url.replace('BondageCollege/', '');
+ }
+-export function resolveGithubUrl(source, siteConfig, gitRefName) {
+-    var _a;
++export function resolveGithubUrl(source, gitRefName) {
+     if (source.url) {
+         return source.url;
+     }
+-    if (!siteConfig.githubHost || !siteConfig.organizationName || !siteConfig.projectName) {
+-        return undefined;
+-    }
+-    return `https://${siteConfig.githubHost}${siteConfig.githubPort ? `:${siteConfig.githubPort}` : ''}/${siteConfig.organizationName}/${siteConfig.projectName}/blob/${(_a = source.gitRevision) !== null && _a !== void 0 ? _a : gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`;
++    return `https://gitgud.io/silizia/Bondage-College/-/blob/${gitRefName}/${replaceWithSrc(source.fileName)}#L${source.line}`;
+ }
+ export function SourceLink({ sources = [] }) {
+-    const { siteConfig } = useDocusaurusContext();
+     const gitRefName = useGitRefName();
+     if (sources.length === 0) {
+         return null;
+     }
+     return (_jsx(_Fragment, { children: sources.map((source) => {
+-            const url = resolveGithubUrl(source, siteConfig, gitRefName);
++            const url = resolveGithubUrl(source, gitRefName);
+             if (!url) {
+                 return null;
+             }
+             return (_jsx("a", { className: "tsd-anchor", href: url, rel: "noreferrer", target: "_blank", children: _jsx("i", { className: "codicon codicon-file-code" }) }, source.fileName));
+Index: /@apify/docusaurus-plugin-typedoc-api/lib/plugin/data.js
+===================================================================
+--- /@apify/docusaurus-plugin-typedoc-api/lib/plugin/data.js
++++ /@apify/docusaurus-plugin-typedoc-api/lib/plugin/data.js
+@@ -91,9 +91,9 @@
+             const tsconfig = path.join(projectRoot, (_a = options.tsconfigName) !== null && _a !== void 0 ? _a : 'tsconfig.json');
+             const app = yield TypeDoc.Application.bootstrapWithPlugins(Object.assign(Object.assign({ gitRevision: (_b = getCurrentGitRef()) !== null && _b !== void 0 ? _b : options.gitRefName, includeVersion: true, skipErrorChecking: true, 
+                 // stripYamlFrontmatter: true,
+                 // Only emit when using project references
+-                emit: shouldEmit(projectRoot, tsconfig), 
++                emit: 'none', 
+                 // Only document the public API by default
+                 excludeExternals: true, excludeInternal: true, excludePrivate: true, excludeProtected: true, 
+                 // Enable verbose logging when debugging
+                 logLevel: options.debug ? 'Verbose' : 'Info', inlineTags: [
