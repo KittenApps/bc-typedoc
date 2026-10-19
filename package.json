@@ -22,12 +22,12 @@
     "@docusaurus/preset-classic": "^3.10.2",
     "@easyops-cn/docusaurus-search-local": "0.52.3",
     "@mdx-js/react": "^3.1.1",
-    "bc-data": "^132.0.0",
+    "bc-data": "^133.0.0",
     "clsx": "^2.1.1",
     "custompatch": "^1.1.12",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "socket.io-client": "4.8.1"
   },
   "devDependencies": {
@@ -48,5 +48,9 @@
   },
   "engines": {
     "node": ">=18.0"
+  },
+  "allowScripts": {
+    "@swc/core@1.16.18": true,
+    "core-js@3.51.0": true
   }
 }
